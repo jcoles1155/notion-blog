@@ -11,7 +11,7 @@ export default async function getNotionAsset(
   signedUrls: string[]
 }> {
   const requestURL = `${API_ENDPOINT}/getSignedFileUrls`
-  const assetRes = await fetch(requestURL, {
+  const assetRes: any = await fetch(requestURL, {
     method: 'POST',
     headers: {
       cookie: `token_v2=${NOTION_TOKEN}`,

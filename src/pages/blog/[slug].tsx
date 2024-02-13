@@ -48,7 +48,7 @@ export async function getStaticProps({ params: { slug }, preview }) {
           `https://api.twitter.com/1/statuses/oembed.json?id=${tweetId}`
         )
         const json = await res.json()
-        properties.html = json.html.split('<script')[0]
+        // properties.html = json.html.split('<script')[0]
         post.hasTweet = true
       } catch (_) {
         console.log(`Failed to get tweet embed for ${src}`)
@@ -179,7 +179,7 @@ const RenderPost = ({ post, redirect, preview }) => {
             listMap[id] = {
               key: id,
               nested: [],
-              children: textBlock(properties.title, true, id),
+              children: textBlock(properties.title, true, id) as any,
             }
 
             if (listMap[parent_id]) {
@@ -220,7 +220,7 @@ const RenderPost = ({ post, redirect, preview }) => {
             listTagName = null
           }
 
-          const renderHeading = (Type: string | React.ComponentType) => {
+          const renderHeading = (Type: string | any) => {
             toRender.push(
               <Heading key={id}>
                 <Type key={id}>{textBlock(properties.title, true, id)}</Type>

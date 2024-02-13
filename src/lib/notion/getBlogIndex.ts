@@ -20,7 +20,7 @@ export default async function getBlogIndex(previews = true) {
 
   if (!postsTable) {
     try {
-      const data = await rpc('loadPageChunk', {
+      const data: any = await rpc('loadPageChunk', {
         pageId: BLOG_INDEX_ID,
         limit: 100, // TODO: figure out Notion's way of handling pagination
         cursor: { stack: [] },
@@ -29,7 +29,7 @@ export default async function getBlogIndex(previews = true) {
       })
 
       // Parse table with posts
-      const tableBlock = values(data.recordMap.block).find(
+      const tableBlock = values(data?.recordMap?.block).find(
         (block: any) => block.value.type === 'collection_view'
       )
 
