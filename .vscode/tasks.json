@@ -1,0 +1,41 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "run start",
+      "type": "shell",
+      "command": "yarn start",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "yarn dev",
+      "type": "shell",
+      "command": "yarn dev",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "yarn build",
+      "type": "shell",
+      "command": "yarn build",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "create table",
+      "type": "shell",
+      "command": " NOTION_TOKEN='v02%3Auser_token_or_cookies%3A0ihfFDJT6MVKCkxOB8daLB3mxow94IpxZ5SNT8weRjN393ya0zXbum5HCZosQHO75mlRpmJ5HHUns13mlNSoaNwV5GSoKpg2_TlwY5DNFSNADYJfUP44zk4tOaz-E1oJGDhH' BLOG_INDEX_ID='3b949ebe-f6cf-41c0-b789-eee531e4bdd8' node scripts/create-table.js",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
