@@ -8,6 +8,11 @@
     "format": "prettier --write \"**/*.{js,jsx,json,ts,tsx,md,mdx,css,html,yml,yaml,scss,sass}\" --ignore-path .gitignore",
     "lint-staged": "lint-staged"
   },
+  "browser": {
+    "crypto": false,
+    "fs": false,
+    "node-fetch": false
+  },
   "pre-commit": "lint-staged",
   "dependencies": {
     "@zeit/react-jsx-parser": "2.0.0",
